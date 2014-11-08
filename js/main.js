@@ -44703,7 +44703,7 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
       $info.find('.name').text(this.userData().name);
       $info.find('.description').text(this.userData().description);
       $info.find('.distance').text(this.userData().distance);
-      $info.show();
+      $info.slideDown("fast");
       p = this.mesh.position;
       Actor.planet.position.set(p.x, p.y, p.z);
       window.s.remove(Actor.planet);
@@ -44848,7 +44848,7 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
   };
 
   $('.close').on('click', function() {
-    $('#info').hide('slow');
+    $('#info').slideUp('medium');
     return window.s.remove(Actor.planet);
   });
 

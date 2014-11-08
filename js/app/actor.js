@@ -58,7 +58,7 @@
       $info.find('.name').text(this.userData().name);
       $info.find('.description').text(this.userData().description);
       $info.find('.distance').text(this.userData().distance);
-      $info.show();
+      $info.slideDown("fast");
       p = this.mesh.position;
       Actor.planet.position.set(p.x, p.y, p.z);
       window.s.remove(Actor.planet);
