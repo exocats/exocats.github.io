@@ -79,7 +79,7 @@
 
   <div id="info">
     <div class="header"> <span class="close">x</span> </div>
-    <h1>FACTS</h1>
+    <h2>FACTS</h2>
     <table>
       <tr>
         <th>Name:</th>
@@ -95,7 +95,6 @@
       </tr>
     </table>
   </div>
-  <input type="range" name="points" min="1" max="100" value="1" autofocus>
 </div>
 
     </div><!-- container -->
@@ -226,17 +225,12 @@
   <br /><br /><br /><br /><br /><br />
 
   <script type="text/javascript">
-    $(document).ready(function) {
-      var numAnim = new countUp(".money", 0, 202.58, 2, 15);
-      numAnim.start();
+    $('#socialBtn').click(function() {
+      $('.share').removeClass('hidden');
+    });
 
-      $('#socialBtn').click(function() {
-        $('.share').removeClass('hidden');
-      });
-
-      $('#donateBtn').click(function() {
-        $('.donate').removeClass('hidden');
-      });
+    $('#donateBtn').click(function() {
+      $('.donate').removeClass('hidden');
     });
   </script>
 

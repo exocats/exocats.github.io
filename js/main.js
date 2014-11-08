@@ -44658,7 +44658,7 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
       for (i = _i = 1; _i <= 9; i = ++_i) {
         this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-0000" + i + ".png"));
       }
-      for (i = _j = 10; _j <= 20; i = ++_j) {
+      for (i = _j = 10; _j <= 26; i = ++_j) {
         this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-000" + i + ".png"));
       }
       geo = new THREE.SphereGeometry(0.6, 20, 20);
@@ -44689,7 +44689,6 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
       this.mesh.position.x = x;
       this.mesh.position.y = y;
       this.mesh.position.z = z;
-      console.log("Setting at", x, y, z);
       this.mesh.userData = system;
       this.mesh.callback = this.callback;
     }
@@ -44767,7 +44766,7 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
 
     Scene.prototype.addActors = function(geometry, material) {
       var actor, system, _i, _len, _ref, _results;
-      _ref = json_data.slice(0, 30);
+      _ref = json_data.slice(0, 40);
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         system = _ref[_i];
@@ -44825,7 +44824,6 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
   detectClick = function(event) {
     var intersect, intersects, raycaster, vector;
     event.preventDefault();
-    console.log((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1, event.clientX, event.clientY, window.innerWidth, window.innerHeight, $('#scene').css('width'), $('#scene').css('height'));
     vector = new THREE.Vector3();
     vector.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1, 0.5);
     vector.unproject(window.camera);
@@ -44839,18 +44837,12 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
   };
 
   load = function() {
-    var $range, scene;
+    var scene;
     scene = new Scene();
     window.camera = scene.getCamera();
     window.s = scene.getScene();
     window.objects = scene.getActors();
     $('canvas').on('click', detectClick);
-    $range = $('input[type="range"]');
-    $range.on('change', function() {
-      var val;
-      val = parseInt($range.val(), 10);
-      return camera.position.z = 8 - (val / 10);
-    });
     camera.position.set(1, 1, 8);
     return camera.lookAt(s.position);
   };

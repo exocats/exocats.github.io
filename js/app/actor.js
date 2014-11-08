@@ -13,7 +13,7 @@
       for (i = _i = 1; _i <= 9; i = ++_i) {
         this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-0000" + i + ".png"));
       }
-      for (i = _j = 10; _j <= 20; i = ++_j) {
+      for (i = _j = 10; _j <= 26; i = ++_j) {
         this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-000" + i + ".png"));
       }
       geo = new THREE.SphereGeometry(0.6, 20, 20);
@@ -44,7 +44,6 @@
       this.mesh.position.x = x;
       this.mesh.position.y = y;
       this.mesh.position.z = z;
-      console.log("Setting at", x, y, z);
       this.mesh.userData = system;
       this.mesh.callback = this.callback;
     }
