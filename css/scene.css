@@ -1,0 +1,32 @@
+/* line 1, /Users/jcmuller/Development/OSS/HTU2014/exocats/source/css/scene.sass */
+#scene {
+  height: 400px;
+  width: 600px;
+  margin: 30px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+  /* line 10, /Users/jcmuller/Development/OSS/HTU2014/exocats/source/css/scene.sass */
+  #scene #info {
+    display: none;
+    border: 1px solid red;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 10px;
+    top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 8px; }
+    /* line 22, /Users/jcmuller/Development/OSS/HTU2014/exocats/source/css/scene.sass */
+    #scene #info th {
+      text-align: left; }
+    /* line 25, /Users/jcmuller/Development/OSS/HTU2014/exocats/source/css/scene.sass */
+    #scene #info .close {
+      top: -4px;
+      right: 3px;
+      position: absolute;
+      font-size: 20px;
+      color: red;
+      cursor: pointer; }
