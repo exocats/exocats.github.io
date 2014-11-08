@@ -44654,9 +44654,12 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
     Actor.planet = null;
 
     Actor.loadTextures = function() {
-      var geo, i, material, _i;
-      for (i = _i = 1; _i <= 7; i = ++_i) {
+      var geo, i, material, _i, _j;
+      for (i = _i = 1; _i <= 9; i = ++_i) {
         this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-0000" + i + ".png"));
+      }
+      for (i = _j = 10; _j <= 20; i = ++_j) {
+        this.textures.push(THREE.ImageUtils.loadTexture("img/cats/actual-cat-000" + i + ".png"));
       }
       geo = new THREE.SphereGeometry(0.6, 20, 20);
       material = new THREE.MeshLambertMaterial({
@@ -44803,7 +44806,7 @@ THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype )
 (function() {
   var PI2, detectClick, load, particleMaterial;
 
-  $.getJSON("/js/data_array.json").success(function(data) {
+  $.getJSON("/js/cleaned.json").success(function(data) {
     window.json_data = data;
     return load();
   });
